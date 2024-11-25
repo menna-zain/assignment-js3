@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="imgs/bookmark (1).png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+<body>
+  <div class="container text-center mx-auto">
+    <h1>Bookmarker</h1>
+    <hr>
+    <p><i class="fa-solid fa-bookmark"></i>
+      Bookmark your favorite sites
+      <i class="fa-solid fa-bookmark"></i></p>
+    
+    <form id="bookmarkForm">
+      <label for="siteName">
+        <i class="fa-solid fa-bookmark"></i>
+         Site Name
+      </label>
+      <input 
+      type="text" 
+      id="siteName" 
+      class="form-control forminput"
+      placeholder="Bookmark Name" 
+      required>
+      
+      <label for="siteUrl">
+        <i class="fa-solid fa-link"></i> 
+        Site URL
+      </label>
+      <input
+      oninput="validate(this)"
+       type="url" 
+       id="siteUrl" 
+       class="form-control forminput"
+       placeholder="Website URL" 
+       required>
+       <div id="urlAlert" class="alert alert-danger d-none my-3" role="alert">
+        Invalid URL. Please follow the correct format (ex: https://example.com).
+      </div>
+      <button onclick="addBookMark()" type="submit">Submit</button>
+    </form>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th >Index</th>
+          <th>Website Name</th>
+          <th>Visit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="rowData">
+        <!-- Bookmarks will be here -->
+      </tbody>
+    </table>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
